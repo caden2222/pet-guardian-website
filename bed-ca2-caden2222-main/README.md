@@ -4,9 +4,9 @@ Pet Guardian is a gamified wellness web application developed for ST0503 Backend
 The application allows users to complete wellness challenges to earn points, redeem badges, and unlock virtual pet companions. It integrates a frontend website with a Node.js + MySQL backend developed in CA1, focusing on secure authentication, gamification, and user interaction.
 
 Video Demos
-https://youtu.be/nalLIb-IgTo?si=ewxSfQjn_2lIrp4U
-https://youtu.be/DonJCR25EWg?si=O5RY8CjIZZYVCCev
-https://youtu.be/ovFvupN4m8M?si=ssvqK2n40ZQrN809
+- https://youtu.be/nalLIb-IgTo?si=ewxSfQjn_2lIrp4U
+- https://youtu.be/DonJCR25EWg?si=O5RY8CjIZZYVCCev
+- https://youtu.be/ovFvupN4m8M?si=ssvqK2n40ZQrN809
 
 ## Features Implemented
 
