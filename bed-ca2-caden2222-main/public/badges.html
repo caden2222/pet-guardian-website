@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Wellness Hub</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/color.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark petnav sticky-top shadow-sm">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="brand-badge">
+                    <img src="images/pet-guardian.png" alt="Pet Guardian" />
+                </span>
+                <div class="d-flex flex-column lh-1">
+                    <span class="brand-title">Pet Guardian</span>
+                    <small class="brand-subtitle d-none d-sm-block">Challenge • Earn • Care</small>
+                </div>
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <!-- Center/Left links -->
+                <ul class="navbar-nav mx-lg-auto gap-lg-2 mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-pill" href="index.html" aria-current="page">
+                            <span class="me-2">🏠</span>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-pill" href="challenges.html">
+                            <span class="me-2">⚔️</span>Challenges
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-pill active" href="badges.html">
+                            <span class="me-2">🏅</span>Badges
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-pill" href="pets.html">
+                            <span class="me-2">🐾</span>Pets
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Right side user actions -->
+                <div class="d-flex align-items-center gap-2 ms-lg-auto mt-3 mt-lg-0">
+
+                    <!-- Points (logged in only) -->
+                    <span id="pointsText" class="d-none points-pill me-2">
+                        🪙 <span id="pointsValue">0</span>
+                    </span>
+
+                    <!-- Logged in -->
+                    <a id="profileButton" href="profile.html" class="btn btn-outline-light btn-sm d-none">
+                        <span class="me-1">🛡️</span>Profile
+                    </a>
+
+                    <button id="logoutButton" type="button" class="btn btn-light btn-sm d-none">
+                        Logout
+                    </button>
+
+                    <!-- Logged out -->
+                    <a id="loginButton" href="login.html" class="btn btn-outline-light btn-sm">
+                        Login
+                    </a>
+
+                    <a id="registerButton" href="register.html" class="btn btn-warning btn-sm fw-semibold">
+                        <span class="me-1">✨</span>Join
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main -->
+    <main class="py-4 pet-bg">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="pet-card p-4 text-white mb-4 rounded">
+                <div class="pet-badge mb-2 text-white">🏅 Badges</div>
+                <h3 class="mb-1">Guardian Badges</h3>
+                <p class="text-white-50 mb-0">
+                    Earn badges by completing challenges. Distinct = different activities, Cumulative = total completed.
+                </p>
+            </div>
+
+            <!-- Dynamic grid -->
+            <div class="row g-3" id="badgeGrid"></div>
+
+            <!-- Status -->
+            <div class="pt-3">
+                <div id="badgeStatus" class="text-center text-muted"></div>
+            </div>
+
+        </div>
+    </main>
+    <!-- Auth Expired / Login Required Modal -->
+    <div class="modal fade" id="authExpiredModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Login Required</h5>
+                </div>
+
+                <div class="modal-body">
+                    You need to log in to perform this action.
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="authExpiredOkBtn">
+                        Go to Login
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Toast for error -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+        <div id="redeemToast" class="toast align-items-center text-bg-warning border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="redeemToastBody"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+
+    <!-- Your shared scripts (keep if your project uses them) -->
+    <script src="js/authExpiredGuard.js" type="text/javascript"></script>
+    <script src="js/queryCmds.js" type="text/javascript"></script>
+    <script src="js/getCurrentURL.js" type="text/javascript"></script>
+    <script src="js/userNavbarToggle.js" type="text/javascript"></script>
+    <script src="js/getBadges.js" type="text/javascript"></script>
+    <script src="js/badgesAction.js" type="text/javascript"></script>
+
+</body>
+
+</html>

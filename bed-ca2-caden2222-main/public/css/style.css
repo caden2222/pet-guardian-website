@@ -1,0 +1,214 @@
+/* ===== Page Background ===== */
+.pet-bg{
+  min-height: 100vh;
+}
+
+/* ===== Cards ===== */
+/* Base card (default everywhere) */
+.card{
+  background: #ffffff;
+  border: 1px solid #e6eefc;
+  border-radius: 18px;
+}
+
+/* Pet Guardian themed card */
+.pet-card{
+  background: linear-gradient(135deg, #0b3b6e, #0f6bdc);
+  border: 1px solid #2b78ff;
+  color: #ffffff;
+}
+
+
+/* ===== Navbar ===== */
+.petnav{
+  background: linear-gradient(135deg, #0b3b6e, #0f6bdc);
+  border-bottom: 1px solid #2b78ff;
+}
+
+.brand-badge{
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: #1b6bda;
+  border: 1px solid #3d8cff;
+}
+
+.brand-badge img{
+  width: 36px;
+  height: 36px;
+}
+
+.brand-title{
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+.brand-subtitle{
+  color: #d7e7ff;
+  font-weight: 600;
+}
+
+/* ===== Nav links ===== */
+.nav-pill{
+  border-radius: 999px;
+  padding: 8px 14px !important;
+  color: #eaf2ff !important;
+  transition: 0.15s ease;
+}
+
+.nav-pill:hover{
+  background: #1b6bda;
+}
+
+.navbar .nav-link.active{
+  background: #1b6bda;
+  border: 1px solid #3d8cff;
+}
+
+/* ===== Hero Section ===== */
+.pg-hero{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e6eefc;
+}
+
+.pg-hero-inner{
+  padding: 20px;
+  background: linear-gradient(135deg, #0b3b6e, #0f6bdc);
+  color: #ffffff;
+}
+
+.pg-kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #1b6bda;
+  border: 1px solid #3d8cff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pg-title{
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  font-size: 32px;
+}
+
+.pg-subtitle{
+  color: #d7e7ff;
+  max-width: 60ch;
+}
+
+/* ===== Stat Tiles ===== */
+.pg-tile{
+  border-radius: 16px;
+  border: 1px solid #e6eefc;
+  background: #ffffff;
+  transition: 0.15s ease;
+}
+
+.pg-tile:hover{
+  border-color: #cfe0ff;
+}
+
+.pg-tile-label{
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.pg-tile-desc{
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ===== Counter ===== */
+.pg-count{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #e9f2ff;
+  border: 1px solid #cfe0ff;
+}
+
+.pg-count-number{
+  font-weight: 900;
+  font-size: 18px;
+  color: #0b3b6e;
+}
+
+/* ===== Summary ===== */
+.pg-summary{
+  border-radius: 16px;
+  border: 1px solid #e6eefc;
+  background: #ffffff;
+}
+
+.pg-summary-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fff3cc;
+  border: 1px solid #ffd666;
+  font-size: 18px;
+}
+
+/* ===== Inputs & Buttons ===== */
+.pet-input{
+  background: #ffffff;
+  border: 1px solid #cfe0ff;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.pet-input:focus{
+  border-color: #0f6bdc;
+  outline: none;
+}
+
+.pet-btn{
+  border: none;
+  font-weight: 800;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22c55e, #14b8a6);
+  color: #0b1220;
+}
+
+.pet-link{
+  font-weight: 800;
+  text-decoration: none;
+  color: #0f6bdc;
+}
+
+.pet-link:hover{
+  text-decoration: underline;
+}
+
+.points-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  background: linear-gradient(135deg, #ffe08a, #ffd24d);
+  color: #5a3e00;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+

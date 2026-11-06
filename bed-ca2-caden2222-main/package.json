@@ -1,0 +1,29 @@
+{
+  "name": "bed-ca2-caden2222",
+  "version": "1.0.0",
+  "description": "You are required to build your folder structures for your project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "init_tables": "node src/configs/createSchema.js && node src/configs/initTables.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ST0503-BED/bed-ca2-caden2222.git"
+  },
+  "author": "Caden Toh Wei Jie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ST0503-BED/bed-ca2-caden2222/issues"
+  },
+  "homepage": "https://github.com/ST0503-BED/bed-ca2-caden2222#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.16.1",
+    "nodemon": "^3.1.11"
+  }
+}

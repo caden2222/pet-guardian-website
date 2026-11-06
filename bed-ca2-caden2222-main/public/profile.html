@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Profile</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/color.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark petnav sticky-top shadow-sm">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-badge">
+          <img src="images/pet-guardian.png" alt="Pet Guardian" />
+        </span>
+        <div class="d-flex flex-column lh-1">
+          <span class="brand-title">Pet Guardian</span>
+          <small class="brand-subtitle d-none d-sm-block">Challenge • Earn • Care</small>
+        </div>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Center/Left links -->
+        <ul class="navbar-nav mx-lg-auto gap-lg-2 mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-pill" href="index.html" aria-current="page">
+              <span class="me-2">🏠</span>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-pill" href="challenges.html">
+              <span class="me-2">⚔️</span>Challenges
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-pill" href="badges.html">
+              <span class="me-2">🏅</span>Badges
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-pill" href="pets.html">
+              <span class="me-2">🐾</span>Pets
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right side user actions -->
+        <div class="d-flex align-items-center gap-2 ms-lg-auto mt-3 mt-lg-0">
+
+          <!-- Points (logged in only) -->
+          <span id="pointsText" class="d-none points-pill me-2">
+            🪙 <span id="pointsValue">0</span>
+          </span>
+
+          <!-- Logged in -->
+          <a id="profileButton" href="profile.html" class="btn btn-outline-light btn-sm d-none">
+            <span class="me-1">🛡️</span>Profile
+          </a>
+
+          <button id="logoutButton" type="button" class="btn btn-light btn-sm d-none">
+            Logout
+          </button>
+
+          <!-- Logged out -->
+          <a id="loginButton" href="login.html" class="btn btn-outline-light btn-sm">
+            Login
+          </a>
+
+          <a id="registerButton" href="register.html" class="btn btn-warning btn-sm fw-semibold">
+            <span class="me-1">✨</span>Join
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4 pet-bg">
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="pg-hero mb-4">
+        <div class="pg-hero-inner">
+          <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <div>
+              <div class="pg-kicker mb-2">
+                <span class="me-2">👤</span>My Profile
+              </div>
+              <h1 class="pg-title mb-2">Your Wellness Journey</h1>
+              <p class="pg-subtitle mb-0">
+                Track your progress, pets, and achievements.
+              </p>
+            </div>
+
+            <div class="pg-hero-actions d-flex gap-2">
+              <a class="btn btn-light btn-sm fw-semibold" href="challenges.html">
+                ⚔️ Challenges
+              </a>
+              <a class="btn btn-outline-light btn-sm" href="pets.html">
+                🐾 Pets
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Stats -->
+      <section class="row g-3 mb-4">
+        <div class="col-12 col-md-4">
+          <div class="card pg-tile h-100">
+            <div class="card-body">
+              <div class="pg-tile-label">Pets Owned</div>
+              <div class="pg-tile-desc">Your collected companions</div>
+              <div class="pg-count mt-2">
+                <span class="pg-count-icon">🐾</span>
+                <span id="statPetsOwned" class="pg-count-number">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card pg-tile h-100">
+            <div class="card-body">
+              <div class="pg-tile-label">Badges</div>
+              <div class="pg-tile-desc">Achievements unlocked</div>
+              <div class="pg-count mt-2">
+                <span class="pg-count-icon">🏅</span>
+                <span id="statBadges" class="pg-count-number">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card pg-tile h-100">
+            <div class="card-body">
+              <div class="pg-tile-label">Challenges</div>
+              <div class="pg-tile-desc">Your challenge progress</div>
+
+              <!-- Total Challenges -->
+              <div class="pg-count mt-3">
+                <span class="pg-count-icon">📋</span>
+                <span class="pg-count-number" id="statDistinctChallenges">0</span>
+                <div class="small text-muted">Distinct challenges</div>
+              </div>
+
+              <!-- Cumulative Challenges Done -->
+              <div class="pg-count mt-3">
+                <span class="pg-count-icon">⚔️</span>
+                <span class="pg-count-number" id="statChallengesDone">0</span>
+                <div class="small text-muted">Completed challenges</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Content Grid -->
+      <section class="row g-3">
+        <!-- My Pets -->
+        <div class="col-12 col-lg-6">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">My Pets</h5>
+                <a href="pets.html" class="small text-decoration-none">View all</a>
+              </div>
+              <p class="text-muted small mb-3">
+                Pets you’ve unlocked using points.
+              </p>
+
+              <div class="row g-3" id="ownedPetsGrid">
+                <div class="col-12">
+                  <div class="text-muted small">No pets yet.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges + Activity -->
+        <div class="col-12 col-lg-6">
+          <!-- Badges -->
+          <div class="card shadow-sm border-0 mb-3">
+            <div class="card-body px-0">
+              <div class="d-flex justify-content-between align-items-center mb-2 px-3">
+                <h5 class="mb-0">My Badges</h5>
+                <a href="badges.html" class="small text-decoration-none">View all</a>
+              </div>
+
+              <p class="text-muted small mb-3 px-3">
+                Earned through wellness challenges.
+              </p>
+
+              <div class="row g-3 mx-0" id="ownedBadgesGrid"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="mb-2">Challenges Completed</h5>
+            <p class="text-muted small mb-3">
+              All challenges completed
+            </p>
+
+            <div class="list-group" id="activityList">
+              <div class="list-group-item">
+                <div class="text-muted small">No activity yet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+
+    </div>
+  </main>
+  <!-- Auth Expired / Login Required Modal -->
+  <div class="modal fade" id="authExpiredModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Login Required</h5>
+        </div>
+
+        <div class="modal-body">
+          You need to log in to perform this action.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="authExpiredOkBtn">
+            Go to Login
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/authExpiredGuard.js" type="text/javascript"></script>
+  <script src="js/queryCmds.js" type="text/javascript"></script>
+  <script src="js/getCurrentURL.js" type="text/javascript"></script>
+  <script src="js/userNavbarToggle.js" type="text/javascript"></script>
+  <script src="js/profileAction.js" type="text/javascript"></script>
+</body>
+
+</html>
